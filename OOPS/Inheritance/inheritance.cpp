@@ -59,7 +59,7 @@ private:
 public:
   ManualCar(string b, string m) : Car(b, m)
   {
-    currentGear = 0;
+    this->currentGear = 0;
   }
 
   void shiftGear(int n)
@@ -82,7 +82,7 @@ private:
 public:
   ElectricCar(string b, string m) : Car(b, m)
   {
-    batteryPercentage = 100;
+    this->batteryPercentage = 100;
   }
 
   void chargeBattery()
