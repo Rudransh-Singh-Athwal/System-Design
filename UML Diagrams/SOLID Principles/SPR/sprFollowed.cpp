@@ -26,7 +26,7 @@ public:
     return products;
   }
 
-  // 1. Calculate total price of the cart
+  // Calculate total price of the cart
   double calculateTotal()
   {
     double total = 0;
@@ -37,19 +37,39 @@ public:
 
     return total;
   }
+};
 
-  // 2. Violating SPR: should be in a separate class
+class ShoppingCartPrinter
+{
+  ShoppingCart *cart;
+
+public:
+  ShoppingCartPrinter(ShoppingCart *cart)
+  {
+    this->cart = cart;
+  }
+
   void printInvoice()
   {
     cout << "Shopping cart invoice:-\n";
-    for (auto p : products)
+    for (auto p : cart->getProducts())
     {
       cout << "   " << p->name << " - $ " << p->price << endl;
     }
-    cout << "Total: $" << calculateTotal() << endl;
+    cout << "Total: $" << cart->calculateTotal() << endl;
+  }
+};
+
+class ShoppingCartStorage
+{
+  ShoppingCart *cart;
+
+public:
+  ShoppingCartStorage(ShoppingCart *cart)
+  {
+    this->cart = cart;
   }
 
-  // 3. Violating SPR
   void saveToDatabase()
   {
     cout << "Shopping cart saved to database...\n";
@@ -63,8 +83,11 @@ int main()
   cart->addProduct(new Product("Laptop", 105000));
   cart->addProduct(new Product("Mouse", 500));
 
-  cart->printInvoice();
-  cart->saveToDatabase();
+  ShoppingCartPrinter *printer = new ShoppingCartPrinter(cart);
+  printer->printInvoice();
+
+  ShoppingCartStorage *db = new ShoppingCartStorage(cart);
+  db->saveToDatabase();
 
   return 0;
 }
