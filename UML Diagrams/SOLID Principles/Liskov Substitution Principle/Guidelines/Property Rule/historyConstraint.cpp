@@ -42,7 +42,7 @@ int main()
 {
   BankAccount *acc = new BankAccount(10000);
   acc->withdraw(2500);
-  BankAccount *fixedDeposit = new FixedDepositAccount(12000);
+  FixedDepositAccount *fixedDeposit = new FixedDepositAccount(12000);
   try
   {
     fixedDeposit->withdraw(1250);
