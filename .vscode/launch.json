@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/rsath/OneDrive/Desktop/System Design/UML Diagrams/SOLID Principles/Dependency Inversion Principle",
+      "program": "c:/Users/rsath/OneDrive/Desktop/System Design/UML Diagrams/SOLID Principles/Dependency Inversion Principle/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
