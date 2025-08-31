@@ -11,12 +11,12 @@ public:
 class Square : public Shape
 {
 public:
-  void area()
+  void area() override
   {
     cout << "Success: Area for square calculated successfully\n";
   }
 
-  void volume()
+  void volume() override
   {
     throw logic_error("Volume doesn't exist for square");
   }
@@ -25,12 +25,12 @@ public:
 class Rectangle : public Shape
 {
 public:
-  void area()
+  void area() override
   {
     cout << "Success: Area for rectangle calculated successfully\n";
   }
 
-  void volume()
+  void volume() override
   {
     throw logic_error("Volume doesn't exist for rectangle");
   }
@@ -39,12 +39,12 @@ public:
 class Cube : public Shape
 {
 public:
-  void area()
+  void area() override
   {
     cout << "Success: Area for cube calculated successfully\n";
   }
 
-  void volume()
+  void volume() override
   {
     cout << "Success: Volume for cube calculated successfully\n";
   }

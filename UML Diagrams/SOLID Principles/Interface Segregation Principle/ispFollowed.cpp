@@ -17,7 +17,7 @@ public:
 class Square : public Shape2D
 {
 public:
-  void area()
+  void area() override
   {
     cout << "Success: Area for square calculated successfully\n";
   }
@@ -26,7 +26,7 @@ public:
 class Rectangle : public Shape2D
 {
 public:
-  void area()
+  void area() override
   {
     cout << "Success: Area for rectangle calculated successfully\n";
   }
@@ -35,12 +35,12 @@ public:
 class Cube : public Shape3D
 {
 public:
-  void area()
+  void area() override
   {
     cout << "Success: Area for cube calculated successfully\n";
   }
 
-  void volume()
+  void volume() override
   {
     cout << "Success: Volume for cube calculated successfully\n";
   }
